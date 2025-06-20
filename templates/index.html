@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OTP Verification</title>
+</head>
+<body>
+  <h2>Enter your email to get OTP</h2>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}
+      <p style="color: {{ 'green' if category == 'success' else 'red' }}">{{ message }}</p>
+    {% endfor %}
+  {% endwith %}
+  <form method="POST">
+    <input type="email" name="email" required placeholder="Enter your email">
+    <button type="submit">Send OTP</button>
+  </form>
+</body>
+</html>
+
